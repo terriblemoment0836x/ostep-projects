@@ -1,4 +1,6 @@
 
+# About this fork.
+This fork contains my solution to the projects. in each project subfolder my solution is inside a folder named `solution`.
 # Projects for an Operating Systems Class
 
 This repository holds a number of projects that can be used in an operating
