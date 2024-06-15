@@ -14,7 +14,7 @@ FILE* open_file(char * file_path, char * mode) {
     if (file_ptr == NULL) {
         int error_number = errno;
         if(error_number == ENOENT) {
-            printf("wzip: cannot open file\n");
+            printf("wunzip: cannot open file\n");
         } else {
             FORMAT_PRINT_ERRNO(error_number);
         }
