@@ -85,6 +85,7 @@ int main(int argc, char **argv) {
             free(read_data);
         }
 
+        fclose(file_ptr);
         i++;
     }
     fwrite(&count, sizeof(int), 1, stdout);
