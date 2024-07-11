@@ -156,7 +156,6 @@ int main(int argc, char **argv) {
         default:
             fprintf(stderr,"usage: reverse <input> <output>\n");
             return 1;
-            break;
     }
 
     return 0;
