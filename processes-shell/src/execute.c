@@ -132,7 +132,6 @@ void execute_line(struct command_line* current, char ***path) {
 
     if (current->parallel_start) {
         for (int i = 0; i < current->command_list_size; i++){
-            printf("waiting for child pid: %d\n", child_pids[i]);
             if (child_pids[i] != -1)
                 waitpid(child_pids[i], NULL, 0);
         }
