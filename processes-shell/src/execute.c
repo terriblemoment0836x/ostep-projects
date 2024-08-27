@@ -121,6 +121,7 @@ void execute_line(struct command_line* current, char ***path) {
         if (current->command_list[i]->is_builtin) {
             current->command_list[i]->special_builtin_arg = (void *)path;
             run_builtin(current->command_list[i]);
+            child_pids[i] = -1;
         }
         else if (locate_exec(current->command_list[i], *path)) {
             child_pids[i] = spawn_process(current->command_list[i],
@@ -131,7 +132,9 @@ void execute_line(struct command_line* current, char ***path) {
 
     if (current->parallel_start) {
         for (int i = 0; i < current->command_list_size; i++){
-            waitpid(child_pids[i], NULL, 0);
+            printf("waiting for child pid: %d\n", child_pids[i]);
+            if (child_pids[i] != -1)
+                waitpid(child_pids[i], NULL, 0);
         }
     }
 }

@@ -15,5 +15,5 @@ execute.o: execute.c
 	gcc $(CFLAGS) -c -o execute.o execute.c
 
 clean:
-	rm parser.o main.o utils.o execute.o
+	rm parser.o main.o utils.o execute.o wish
 .PHONE: clean
