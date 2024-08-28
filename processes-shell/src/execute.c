@@ -50,7 +50,7 @@ void builtin_path(struct command* builtin_cmd) {
     //TODO: use typedef to hide the ***ptr
     char ***path_list_ptr = (char ***) builtin_cmd->special_builtin_arg; 
     char **new_path_list = (char **) malloc(
-            sizeof(char *)*(builtin_cmd->args_size)+1);
+            sizeof(char *)*(builtin_cmd->args_size+1));
     int i;
     for (i = 0; i < builtin_cmd->args_size; i++) {
         new_path_list[i] = strdup(builtin_cmd->args[i]);
